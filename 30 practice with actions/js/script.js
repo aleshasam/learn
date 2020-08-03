@@ -22,15 +22,27 @@ const movieDB = {
     ]
 };
 
-document.querySelector('.promo__adv').remove();
+const adv = document.querySelectorAll('.promo__adv img'),
+    poster = document.querySelector('.promo__bg'),
+    genre = poster.querySelector('.promo__genre'),
+    movieList = document.querySelector('.promo__interactive-list');
 
-let genre = document.querySelector('.promo__genre');
+adv.forEach(item => {
+    item.remove();
+});
+
 genre.textContent = 'драма';
 
-let backImg = document.querySelector('.promo__bg');
-backImg.style.cssText = 'background: url ("../img/bg.jpg") ';
+poster.style.backgroundImage = 'url("img/bg.jpg")';
 
-console.log(backImg);
+movieList.innerHTML = '';
 
+movieDB.movies.sort();
 
-//movieDB.movies.sort();
+movieDB.movies.forEach((film, i) => {
+    movieList.innerHTML += `
+        <li class="promo__interactive-item">${i + 1}.${film}
+            <div class="delete"></div>
+        </li>
+    `;
+});
