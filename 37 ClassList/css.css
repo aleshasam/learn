@@ -1,0 +1,17 @@
+button {
+    background-color: yellow;
+    padding: 20px 40px;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
+
+div {
+    background-color: gray;
+    padding: 20px;
+}
