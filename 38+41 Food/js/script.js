@@ -109,8 +109,4 @@ window.addEventListener('DOMContentLoaded', () => {
     function closeModal() {
         modal.style.display = 'none';
     }
-
-    console.log(btnCallModal);
-
-
 });
