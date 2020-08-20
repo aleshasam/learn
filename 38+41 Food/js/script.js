@@ -89,4 +89,28 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     setClock('.timer', deadline);
+
+    // Modal
+
+    const modal = document.querySelector('.modal'),
+        btnCallModal = document.querySelectorAll('.modalOpen'),
+        crossModalExit = document.querySelector('.modal__close');
+
+    btnCallModal.forEach(item => {
+        item.addEventListener('click', modalOpen);
+    });
+
+    function modalOpen() {
+        modal.style.display = 'inline';
+    }
+
+    crossModalExit.addEventListener('click', closeModal);
+
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    console.log(btnCallModal);
+
+
 });
